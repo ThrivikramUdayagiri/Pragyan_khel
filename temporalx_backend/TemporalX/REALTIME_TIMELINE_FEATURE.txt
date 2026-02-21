@@ -1,0 +1,128 @@
+TemporalX Real-Time Timeline Feature
+=====================================
+
+New Feature Added: Live Timeline Visualization
+-----------------------------------------------
+
+The web application now includes a real-time timeline that updates as your video is being analyzed!
+
+✨ Key Features:
+----------------
+
+1. **Color-Coded Timeline**
+   - 🟢 Green: Normal frames (no temporal errors detected)
+   - 🔴 Red: Frame drops (missing frames)
+   - 🟡 Yellow: Frame merges (duplicate/merged frames)
+
+2. **Real-Time Updates**
+   - Timeline updates every 3 frames during processing
+   - Live statistics showing current counts
+   - Progress bar showing analysis completion
+   - Current frame being processed is highlighted with a white border
+
+3. **Visual Enhancements**
+   - Beautiful gradient background
+   - Smooth transitions
+   - Hover tooltips showing frame details and confidence scores
+   - Opacity based on detection confidence (more confident = more opaque)
+
+4. **Performance Optimized**
+   - UI updates throttled to every 3 frames for smooth performance
+   - Lightweight HTML/CSS rendering
+   - No heavy graphics libraries required
+
+📊 How It Works:
+----------------
+
+When you click "Analyze Video", you'll see:
+
+1. A header: "🎬 Real-time Analysis Timeline"
+2. The timeline bar that grows as frames are processed
+3. Real-time status text showing:
+   - Current frame number / Total frames
+   - Count of Normal frames
+   - Count of Frame Drops
+   - Count of Frame Merges
+4. A progress bar showing overall completion percentage
+
+🎯 Example Output:
+------------------
+
+During analysis, you might see:
+
+Timeline: [████████████░░░░░░░░░░░░]
+Status: 🔍 Processing: 245/600 | ✅ Normal: 230 | ❌ Drops: 12 | ⚠️ Merges: 3
+Progress: [==========>          ] 41%
+
+Where:
+- Each bar segment represents one frame
+- Colors show the classification in real-time
+- You can see errors appear as they're detected
+
+📝 Technical Details:
+---------------------
+
+Implementation:
+- Custom frame-by-frame processing loop
+- Streamlit placeholders for dynamic updates (st.empty())
+- HTML/CSS for timeline rendering
+- Direct integration with TemporalErrorDetector methods
+
+Processing Flow:
+1. Video opened with OpenCV
+2. Frame extracted and preprocessed
+3. Metrics computed (optical flow, SSIM, histogram, etc.)
+4. Frame classified (Normal/Drop/Merge)
+5. Timeline updated (every 3 frames)
+6. Frame annotated and written to output
+7. Repeat for all frames
+
+🚀 Usage:
+---------
+
+Simply use the web app as before:
+1. Upload your video
+2. Click "🔍 Analyze Video for Temporal Errors"
+3. Watch the real-time timeline grow!
+4. Timeline will show final results when complete
+
+No additional configuration needed - the feature is automatic!
+
+💡 Tips:
+--------
+
+- Longer videos will have thinner timeline segments (each frame is proportionally sized)
+- Hover over the timeline to see individual frame details
+- The timeline remains visible in the Upload tab after analysis
+- Switch to Results tab to see detailed metrics and download files
+
+🎨 Color Meanings:
+------------------
+
+Timeline Colors:
+- Bright Green (#28a745): Normal frame - no temporal errors
+- Bright Red (#dc3545): Frame drop detected - likely missing frame(s)
+- Bright Yellow (#ffc107): Frame merge detected - likely duplicate/blended frames
+- Gray (#6c757d): Frame currently being processed
+
+Opacity Levels:
+- Higher opacity = Higher confidence in detection (70%-100%)
+- Lower opacity = Lower confidence (shows uncertainty)
+
+⚙️ Customization:
+-----------------
+
+You can adjust detection sensitivity using the sidebar sliders:
+- Optical Flow Threshold: Affects frame drop detection
+- SSIM Threshold: Affects frame merge detection
+- Histogram Threshold: Affects scene change detection
+- Timestamp Tolerance: Affects timing-based detection
+
+Or use Quick Presets for common scenarios:
+- Static Camera (Security footage)
+- Moving Camera (Sports, action videos)
+- Screen Recording
+- Webcam/Streaming
+- High/Low Sensitivity
+
+Enjoy real-time temporal error detection! 🎉

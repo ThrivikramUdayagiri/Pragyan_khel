@@ -1,0 +1,228 @@
+================================================================
+              TEMPORALX WEB APPLICATION GUIDE
+================================================================
+
+🎉 A BROWSER-BASED INTERFACE IS NOW AVAILABLE!
+
+Instead of command-line tools, you can now use a modern web
+interface to upload videos and analyze them visually.
+
+================================================================
+HOW TO START THE WEB APPLICATION
+================================================================
+
+METHOD 1: Double-Click the Batch File (EASIEST)
+------------------------------------------------
+Just double-click:    start_web_app.bat
+
+The web browser will open automatically!
+
+
+METHOD 2: Run from Command Line
+--------------------------------
+C:\TemporalX> start_web_app.bat
+
+
+METHOD 3: PowerShell
+--------------------
+PS C:\TemporalX> .\start_web_app.ps1
+
+
+METHOD 4: Direct Command
+-------------------------
+.venv\Scripts\streamlit.exe run web_app.py
+
+================================================================
+WHAT YOU CAN DO IN THE WEB APP
+================================================================
+
+✓ Upload videos through your browser
+✓ Adjust detection parameters with sliders
+✓ Use preset configurations (Security, Sports, etc.)
+✓ Watch video preview before analysis
+✓ See real-time progress during processing
+✓ View annotated video with color-coded errors
+✓ Download results (annotated video + CSV)
+✓ View beautiful visualizations and graphs
+✓ See detailed statistics and quality scores
+✓ Filter and sort results interactively
+
+================================================================
+WEB APP FEATURES
+================================================================
+
+📤 UPLOAD & ANALYZE TAB:
+------------------------
+- Drag-and-drop video upload
+- Video information display (resolution, FPS, duration)
+- Video preview player
+- One-click analysis button
+- Real-time progress tracking
+- Quick summary of results
+
+📊 RESULTS TAB:
+---------------
+- Detailed classification breakdown
+- Video quality score (0-100%)
+- Processing statistics
+- Annotated video player
+- Interactive data table with filters
+- Download links for all outputs
+
+📈 VISUALIZATIONS TAB:
+----------------------
+- Analysis dashboard (4-panel metrics)
+- Detection timeline
+- Anomaly heatmap
+- Statistical summary charts
+- All PNG images available for download
+
+ℹ️ ABOUT TAB:
+-------------
+- System information
+- Algorithm descriptions
+- Technical specifications
+- Documentation links
+
+================================================================
+SIDEBAR CONTROLS
+================================================================
+
+You can adjust these parameters in real-time:
+
+DETECTION THRESHOLDS:
+- Optical Flow Threshold (10-100)
+- SSIM Threshold (0.5-0.99)
+- Histogram Threshold (0.1-1.0)
+- Timestamp Tolerance (1.0-3.0)
+
+PROCESSING OPTIONS:
+- Processing Resolution (320px to 1280px)
+- Enable/Disable Auto-tuning
+- Show/Hide Progress Window
+
+QUICK PRESETS:
+- Static Camera (Security)
+- Moving Camera (Sports)
+- Screen Recording
+- Webcam/Streaming
+- High Sensitivity
+- Low Sensitivity
+
+================================================================
+EXAMPLE WORKFLOW
+================================================================
+
+1. Start the web app:
+   start_web_app.bat
+
+2. Your browser opens to: http://localhost:8501
+
+3. Adjust settings in the sidebar (or use a preset)
+
+4. Click "Upload & Analyze" tab
+
+5. Upload your video file
+
+6. Preview the video information
+
+7. Click "Analyze Video for Temporal Errors"
+
+8. Wait for processing (progress bar shows status)
+
+9. View results in the "Results" tab
+
+10. Download annotated video and CSV report
+
+11. Check visualizations in "Visualizations" tab
+
+================================================================
+BROWSER COMPATIBILITY
+================================================================
+
+✓ Chrome (recommended)
+✓ Firefox
+✓ Edge
+✓ Safari
+✓ Opera
+
+================================================================
+NETWORK ACCESS
+================================================================
+
+By default, the web app runs on:
+    http://localhost:8501
+
+Only accessible from your computer.
+
+To allow network access from other devices:
+    streamlit run web_app.py --server.address 0.0.0.0
+
+Then access from other devices using your IP address.
+
+================================================================
+STOPPING THE WEB APP
+================================================================
+
+To stop the server:
+1. Go to the command window
+2. Press Ctrl+C
+3. Confirm with 'Y' if prompted
+
+Or just close the command window.
+
+================================================================
+TROUBLESHOOTING
+================================================================
+
+Problem: Port 8501 already in use
+Solution: Stop other Streamlit instances or use a different port:
+          streamlit run web_app.py --server.port 8502
+
+Problem: Browser doesn't open automatically
+Solution: Manually open: http://localhost:8501
+
+Problem: "Module not found" errors
+Solution: Make sure you're using the batch file launchers
+
+Problem: Video won't upload
+Solution: Check file format (MP4, AVI, MOV, MKV, FLV, WMV)
+          and file size (large files may take time to upload)
+
+Problem: Processing is slow
+Solution: Reduce "Processing Resolution" in sidebar
+          or use a shorter video clip for testing
+
+================================================================
+ADVANTAGES OF WEB APP VS CLI
+================================================================
+
+✓ No need to learn command-line syntax
+✓ Visual feedback and progress indicators
+✓ Interactive parameter adjustment
+✓ Instant video preview
+✓ Beautiful visualizations built-in
+✓ Easy file downloads
+✓ User-friendly interface
+✓ Works on any device with a browser
+✓ Can share via network (optional)
+
+================================================================
+FILES INCLUDED
+================================================================
+
+web_app.py              - Main web application code
+start_web_app.bat       - Windows batch launcher
+start_web_app.ps1       - PowerShell launcher
+
+================================================================
+QUICK START COMMAND
+================================================================
+
+Copy and paste this command to start NOW:
+
+    start_web_app.bat
+
+Your browser will open automatically to the web interface!
+
+================================================================
