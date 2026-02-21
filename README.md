@@ -1,6 +1,9 @@
 # Pragyan_khel
 Problem 3 — AI-Based Smart auto focus &amp; Dynamic Subject Tracking System<br><br>
 
+we have done problem 1 and 2 also<br><br><br>
+our main one is circket-tracker<br><br><br>
+
 Design and implement an AI-powered system that allows a user to select any subject (e.g., a
 player or object) in a video (.mp4 or live stream) and automatically maintain focus on it.<br>
 <br>
@@ -26,3 +29,7 @@ Participants must provide:<br>
 ● Visual output showing the selected subject in focus while others are blurred.<br>
 ● A brief explanation of the approach (e.g., detection + tracking + segmentation
   pipeline).
+<br><br><br>
+we have done problem 1 and 2 also<br><br><br>
+our main one is circket-tracker
+
